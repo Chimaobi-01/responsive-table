@@ -1,0 +1,506 @@
+
+
+.menu_wrap {
+  nav.nav {
+    padding-top: 3.5em;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 1em 2.5em;
+      gap: 1em;
+      position: relative;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: whitesmoke;
+        color: #000;
+        font-weight: 600;
+        &::before {
+          background-color: rgba(67, 132, 252, 0.767);
+        }
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        inset-block: 0;
+        width: 4px;
+        content: "";
+      }
+    }
+  }
+
+  .user_acct {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    gap: 0.4em;
+    padding: 1em;
+    background-color: whitesmoke;
+    font-weight: 400;
+    margin: 0 1.5em 1.5em;
+
+    img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgb(56, 56, 56);
+    }
+
+    p {
+      font-size: 0.9em;
+      line-height: 1.5;
+      &:last-of-type {
+        color: rgb(56, 56, 56);
+        font-size: 0.7em;
+      }
+    }
+
+    span {
+      flex: 1;
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
+
+.section_heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 5em 1.5em 1.5em;
+
+  @media (min-width: 1024px) {
+    gap: 3em;
+  }
+
+  div {
+    @media (min-width: 1024px) {
+      flex: 2;
+    }
+
+    h1 {
+      margin-bottom: 0.5em;
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  div.total_sales {
+    border-radius: 0.5em;
+    border: 1px solid gray;
+    padding: 1em;
+
+    @media (min-width: 1024px) {
+      flex: 1;
+      background-image: url("./image/graph.png");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+      padding: 0;
+    }
+
+    div.flex_ {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1em;
+
+      @media (min-width: 1024px) {
+        flex-direction: column;
+        align-items: start;
+        padding: 0.5em 0 0.5em 0.5em;
+      }
+
+      div {
+        p {
+          &:first-child {
+            text-transform: uppercase;
+            font-weight: 300;
+          }
+          &:last-child {
+            font-weight: 600;
+          }
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+
+        svg {
+          display: none;
+          @media (min-width: 1024px) {
+            display: inline;
+            padding: 0.2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+div.table_container {
+  padding: 1.5em;
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    label {
+      position: relative;
+      display: flex;
+
+      @media (min-width: 768px) {
+        flex: 1;
+      }
+
+      svg {
+        position: absolute;
+        left: 2%;
+        top: 15%;
+      }
+      input {
+        flex: 1;
+        padding: 0.7em 2.5em;
+
+        @media (min-width: 768px) {
+          padding-inline-start: 3.5em;
+        }
+      }
+    }
+
+    div.btn_group {
+      display: flex;
+      gap: 0.7em;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        border-radius: 0.3em;
+        gap: 0.5em;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:first-child {
+          span {
+            display: none;
+            @media (min-width: 768px) {
+              display: inline;
+            }
+          }
+        }
+        &:nth-child(2),
+        &:last-child {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    div.overflow {
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scroll-snap-align: start;
+      scrollbar-color: blue;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        white-space: nowrap;
+        margin-top: 2em;
+  
+        th, td {
+          padding: 1em;
+        }
+        input[type="checkbox"] {
+          width: 18px;
+          height: 18px;
+        }
+  
+        thead {
+  
+          tr {
+            th {
+              text-align: start;
+    
+              &:first-of-type {
+                label {
+                  span {
+                    padding-inline-start: 1.5em;
+                  }
+                }
+              }
+              &:nth-of-type(3),
+              &:nth-of-type(4),
+              &:nth-of-type(5),
+              &:nth-of-type(6) {
+                div {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5em;
+                }
+              }
+            }
+          }
+        }
+  
+        tbody {
+          tr {
+  
+            &:nth-of-type(odd) {
+              background-color: lightgray;
+            }
+  
+            td {
+              &:first-of-type {
+                div.container {
+                  display: flex;
+                  align-items: center;
+                  gap: 1.5em;
+  
+                  div.status_ {
+                    display: none;
+                  }
+                  div.status_ + div {
+                    display: flex;
+                      align-items: center;
+                      gap: .5em;
+                  }
+                }
+              }
+  
+              &:nth-of-type(3),
+              &:nth-of-type(4),
+              &:nth-of-type(5),
+              &:nth-of-type(6),
+              &:nth-of-type(7),
+              &:nth-of-type(8),
+              &:nth-of-type(9) {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    
+  }
+
+
+
+
+  @media (max-width: 700px) {
+    table {
+      border: 1px solid;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+
+      thead {
+        display: none;
+      }
+      tbody {
+        display: flex;
+        flex-direction: column;
+
+        tr {
+          flex: 1;
+          padding: 0.5em;
+
+          &:nth-of-type(odd) {
+            background-color: lightgray;
+          }
+
+          input[type="checkbox"] {
+            display: none;
+          }
+
+          td {
+            &:first-child {
+              div.status_ {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+
+                span {
+                  &:first-child {
+                    background-color: rgba(178, 224, 178, 0.5);
+                    color: rgb(66, 129, 66);
+                    border: 1px solid;
+                    border-radius: 2px;
+                    font-size: 0.7em;
+                    padding: 0.2em 0.3em;
+                    transition: all 0.5s;
+                  }
+                }
+
+                svg {
+                  border: 1px solid gray;
+                  border-radius: 0.5em;
+                  cursor: pointer;
+                }
+                svg.open + button {
+                  top: 110%;
+                  visibility: visible;
+                }
+
+                button {
+                  position: absolute;
+                  top: 0;
+                  visibility: hidden;
+                  right: 0;
+                  padding: 0.5em 0.8em;
+                  border-radius: 5px;
+                  border: none;
+                  background-color: white;
+                  color: gray;
+                  transition: top 0.5s;
+                  cursor: pointer;
+
+                }
+              }
+
+              div {
+                &:nth-of-type(2) {
+                  padding-block: 0.5em;
+
+                  // hide elements not needed in mobile view
+                  svg {
+                    display: none;
+                  }
+                  p {
+                    &:nth-of-type(2) {
+                      display: none;
+                    }
+                  }
+
+                  //
+                  div {
+                    h5 {
+                      font-weight: 600;
+                      font-size: 1em;
+                    }
+                    p {
+                      font-weight: 400;
+                      font-size: 0.8em;
+                    }
+                  }
+                }
+              }
+            }
+
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4),
+            &:nth-of-type(5),
+            &:nth-of-type(6),
+            &:nth-of-type(7),
+            &:nth-of-type(9) {
+              display: flex;
+              justify-content: end;
+              font-weight: 600;
+              font-size: 0.9em;
+              position: relative;
+
+              &::before {
+                position: absolute;
+                left: 0;
+                color: gray;
+              }
+            }
+
+            &:nth-of-type(8) {
+              display: none;
+            }
+
+
+            &:nth-of-type(2)::before {
+              content: "Item Purchased";
+            }
+            &:nth-of-type(3)::before {
+              content: "Date";
+            }
+            &:nth-of-type(4)::before {
+              content: "Amount";
+            }
+            &:nth-of-type(5)::before {
+              content: "Quantity";
+            }
+            &:nth-of-type(6)::before {
+              content: "Guaranty";
+            }
+            &:nth-of-type(7)::before {
+              content: "Payment type";
+            }
+            &:nth-of-type(9)::before {
+              content: "Customers's feedback";
+            }
+          }
+        }
+      }
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    td,
+    th {
+      display: block;
+    }
+  }
+}
+
+footer {
+  display: none;
+
+
+  @media (min-width:768px)
+  {
+     padding: 1.5em 4em 3em;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   
+     div {
+       display: flex;
+       align-items: center;
+       gap: 1.5em;
+   
+       button {
+         border-radius: 5px;
+         padding: 0.3em 1em;
+         background-color: white;
+         cursor: pointer;
+       }
+     }
+  
+  }
+}

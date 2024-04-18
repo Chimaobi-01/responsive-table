@@ -1,0 +1,397 @@
+.menu_wrap nav.nav {
+  padding-top: 3.5em;
+  display: flex;
+  flex-direction: column;
+}
+.menu_wrap nav.nav a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1em 2.5em;
+  gap: 1em;
+  position: relative;
+  transition: all 0.5s;
+}
+.menu_wrap nav.nav a:hover {
+  background-color: whitesmoke;
+  color: #000;
+  font-weight: 600;
+}
+.menu_wrap nav.nav a:hover::before {
+  background-color: rgba(67, 132, 252, 0.767);
+}
+.menu_wrap nav.nav a::before {
+  position: absolute;
+  left: 0;
+  inset-block: 0;
+  width: 4px;
+  content: "";
+}
+.menu_wrap .user_acct {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  gap: 0.4em;
+  padding: 1em;
+  background-color: whitesmoke;
+  font-weight: 400;
+  margin: 0 1.5em 1.5em;
+}
+.menu_wrap .user_acct img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid rgb(56, 56, 56);
+}
+.menu_wrap .user_acct p {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.menu_wrap .user_acct p:last-of-type {
+  color: rgb(56, 56, 56);
+  font-size: 0.7em;
+}
+.menu_wrap .user_acct span {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.section_heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 5em 1.5em 1.5em;
+}
+@media (min-width: 1024px) {
+  .section_heading {
+    gap: 3em;
+  }
+}
+@media (min-width: 1024px) {
+  .section_heading div {
+    flex: 2;
+  }
+}
+.section_heading div h1 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+.section_heading div p {
+  font-weight: 300;
+}
+.section_heading div.total_sales {
+  border-radius: 0.5em;
+  border: 1px solid gray;
+  padding: 1em;
+}
+@media (min-width: 1024px) {
+  .section_heading div.total_sales {
+    flex: 1;
+    background-image: url("./image/graph.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    padding: 0;
+  }
+}
+.section_heading div.total_sales div.flex_ {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+@media (min-width: 1024px) {
+  .section_heading div.total_sales div.flex_ {
+    flex-direction: column;
+    align-items: start;
+    padding: 0.5em 0 0.5em 0.5em;
+  }
+}
+.section_heading div.total_sales div.flex_ div p:first-child {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.section_heading div.total_sales div.flex_ div p:last-child {
+  font-weight: 600;
+}
+.section_heading div.total_sales div.flex_ span {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+.section_heading div.total_sales div.flex_ span svg {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .section_heading div.total_sales div.flex_ span svg {
+    display: inline;
+    padding: 0.2em;
+  }
+}
+
+div.table_container {
+  padding: 1.5em;
+}
+div.table_container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+@media (min-width: 768px) {
+  div.table_container form {
+    flex-direction: row;
+  }
+}
+div.table_container form label {
+  position: relative;
+  display: flex;
+}
+@media (min-width: 768px) {
+  div.table_container form label {
+    flex: 1;
+  }
+}
+div.table_container form label svg {
+  position: absolute;
+  left: 2%;
+  top: 15%;
+}
+div.table_container form label input {
+  flex: 1;
+  padding: 0.7em 2.5em;
+}
+@media (min-width: 768px) {
+  div.table_container form label input {
+    padding-inline-start: 3.5em;
+  }
+}
+div.table_container form div.btn_group {
+  display: flex;
+  gap: 0.7em;
+}
+div.table_container form div.btn_group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  gap: 0.5em;
+}
+div.table_container form div.btn_group button svg {
+  width: 20px;
+  height: 20px;
+}
+div.table_container form div.btn_group button:first-child span {
+  display: none;
+}
+@media (min-width: 768px) {
+  div.table_container form div.btn_group button:first-child span {
+    display: inline;
+  }
+}
+div.table_container form div.btn_group button:nth-child(2), div.table_container form div.btn_group button:last-child {
+  flex: 1;
+}
+@media (min-width: 768px) {
+  div.table_container div.overflow {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scroll-snap-align: start;
+    scrollbar-color: blue;
+  }
+  div.table_container div.overflow table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    margin-top: 2em;
+  }
+  div.table_container div.overflow table th, div.table_container div.overflow table td {
+    padding: 1em;
+  }
+  div.table_container div.overflow table input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+  }
+  div.table_container div.overflow table thead tr th {
+    text-align: start;
+  }
+  div.table_container div.overflow table thead tr th:first-of-type label span {
+    padding-inline-start: 1.5em;
+  }
+  div.table_container div.overflow table thead tr th:nth-of-type(3) div, div.table_container div.overflow table thead tr th:nth-of-type(4) div, div.table_container div.overflow table thead tr th:nth-of-type(5) div, div.table_container div.overflow table thead tr th:nth-of-type(6) div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  div.table_container div.overflow table tbody tr:nth-of-type(odd) {
+    background-color: lightgray;
+  }
+  div.table_container div.overflow table tbody tr td:first-of-type div.container {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
+  div.table_container div.overflow table tbody tr td:first-of-type div.container div.status_ {
+    display: none;
+  }
+  div.table_container div.overflow table tbody tr td:first-of-type div.container div.status_ + div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  div.table_container div.overflow table tbody tr td:nth-of-type(3), div.table_container div.overflow table tbody tr td:nth-of-type(4), div.table_container div.overflow table tbody tr td:nth-of-type(5), div.table_container div.overflow table tbody tr td:nth-of-type(6), div.table_container div.overflow table tbody tr td:nth-of-type(7), div.table_container div.overflow table tbody tr td:nth-of-type(8), div.table_container div.overflow table tbody tr td:nth-of-type(9) {
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  div.table_container table {
+    border: 1px solid;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+  }
+  div.table_container table thead {
+    display: none;
+  }
+  div.table_container table tbody {
+    display: flex;
+    flex-direction: column;
+  }
+  div.table_container table tbody tr {
+    flex: 1;
+    padding: 0.5em;
+  }
+  div.table_container table tbody tr:nth-of-type(odd) {
+    background-color: lightgray;
+  }
+  div.table_container table tbody tr input[type=checkbox] {
+    display: none;
+  }
+  div.table_container table tbody tr td:first-child div.status_ {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  div.table_container table tbody tr td:first-child div.status_ span:first-child {
+    background-color: rgba(178, 224, 178, 0.5);
+    color: rgb(66, 129, 66);
+    border: 1px solid;
+    border-radius: 2px;
+    font-size: 0.7em;
+    padding: 0.2em 0.3em;
+    transition: all 0.5s;
+  }
+  div.table_container table tbody tr td:first-child div.status_ svg {
+    border: 1px solid gray;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+  div.table_container table tbody tr td:first-child div.status_ svg.open + button {
+    top: 110%;
+    visibility: visible;
+  }
+  div.table_container table tbody tr td:first-child div.status_ button {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    right: 0;
+    padding: 0.5em 0.8em;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: gray;
+    transition: top 0.5s;
+    cursor: pointer;
+  }
+  div.table_container table tbody tr td:first-child div:nth-of-type(2) {
+    padding-block: 0.5em;
+  }
+  div.table_container table tbody tr td:first-child div:nth-of-type(2) svg {
+    display: none;
+  }
+  div.table_container table tbody tr td:first-child div:nth-of-type(2) p:nth-of-type(2) {
+    display: none;
+  }
+  div.table_container table tbody tr td:first-child div:nth-of-type(2) div h5 {
+    font-weight: 600;
+    font-size: 1em;
+  }
+  div.table_container table tbody tr td:first-child div:nth-of-type(2) div p {
+    font-weight: 400;
+    font-size: 0.8em;
+  }
+  div.table_container table tbody tr td:nth-of-type(2), div.table_container table tbody tr td:nth-of-type(3), div.table_container table tbody tr td:nth-of-type(4), div.table_container table tbody tr td:nth-of-type(5), div.table_container table tbody tr td:nth-of-type(6), div.table_container table tbody tr td:nth-of-type(7), div.table_container table tbody tr td:nth-of-type(9) {
+    display: flex;
+    justify-content: end;
+    font-weight: 600;
+    font-size: 0.9em;
+    position: relative;
+  }
+  div.table_container table tbody tr td:nth-of-type(2)::before, div.table_container table tbody tr td:nth-of-type(3)::before, div.table_container table tbody tr td:nth-of-type(4)::before, div.table_container table tbody tr td:nth-of-type(5)::before, div.table_container table tbody tr td:nth-of-type(6)::before, div.table_container table tbody tr td:nth-of-type(7)::before, div.table_container table tbody tr td:nth-of-type(9)::before {
+    position: absolute;
+    left: 0;
+    color: gray;
+  }
+  div.table_container table tbody tr td:nth-of-type(8) {
+    display: none;
+  }
+  div.table_container table tbody tr td:nth-of-type(2)::before {
+    content: "Item Purchased";
+  }
+  div.table_container table tbody tr td:nth-of-type(3)::before {
+    content: "Date";
+  }
+  div.table_container table tbody tr td:nth-of-type(4)::before {
+    content: "Amount";
+  }
+  div.table_container table tbody tr td:nth-of-type(5)::before {
+    content: "Quantity";
+  }
+  div.table_container table tbody tr td:nth-of-type(6)::before {
+    content: "Guaranty";
+  }
+  div.table_container table tbody tr td:nth-of-type(7)::before {
+    content: "Payment type";
+  }
+  div.table_container table tbody tr td:nth-of-type(9)::before {
+    content: "Customers's feedback";
+  }
+  div.table_container table,
+  div.table_container thead,
+  div.table_container tbody,
+  div.table_container tr,
+  div.table_container td,
+  div.table_container th {
+    display: block;
+  }
+}
+
+footer {
+  display: none;
+  
+}
+@media (min-width: 768px) {
+  footer {
+    padding: 1.5em 4em 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer div {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
+  footer div button {
+    border-radius: 5px;
+    padding: 0.3em 1em;
+    background-color: white;
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=index.css.map */
